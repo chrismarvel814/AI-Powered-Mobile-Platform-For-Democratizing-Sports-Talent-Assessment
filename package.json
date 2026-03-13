@@ -1,0 +1,13 @@
+{
+    "name": "sports-talent-assessment-platform",
+    "version": "1.0.0",
+    "description": "Unified runner for AI-Powered Mobile Platform for Democratizing Sports Talent Assessment",
+    "scripts": {
+        "install:all": "npm install --prefix backend && npm install --prefix frontend",
+        "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\""
+    },
+    "devDependencies": {
+        "concurrently": "^9.2.1",
+        "nodemon": "^3.1.13"
+    }
+}

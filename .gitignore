@@ -1,0 +1,53 @@
+# Node modules
+node_modules/
+
+# Backend and frontend node_modules
+/backend/node_modules/
+/frontend/node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# Environment variables
+.env
+.env.*
+backend/.env
+frontend/.env
+
+# Build outputs
+/frontend/dist/
+/dist/
+/build/
+.vite/
+.parcel-cache/
+
+# Coverage
+coverage/
+*.lcov
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Misc
+*.pem
+*.key
+.cache/
+
+# Project Specific
+backend/mongodb_data/
+frontend/public/uploads/
+uploads/

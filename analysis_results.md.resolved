@@ -1,0 +1,32 @@
+# Project Scope Changes towards "Sports Talent Assessment"
+
+To transition this project strictly into an **"AI Powered Mobile Platform For Democratizing Sports Talent Assessment"** and focus solely on this domain, several "fitness companion" features should be removed, and core features should be repurposed to serve athletic evaluation instead of general workouts.
+
+Here is the breakdown of the changes that need to be made:
+
+## 1. Features to Remove completely
+These features are too focused on general health/fitness and do not fit an objective "talent assessment" platform.
+*   **Nutrition Tracking**:
+    *   **Backend**: Delete [controllers/nutritionController.js](file:///c:/Users/Admin/Downloads/reio-main/backend/controllers/nutritionController.js), [routes/nutrition.js](file:///c:/Users/Admin/Downloads/reio-main/backend/routes/nutrition.js), [models/NutritionLog.js](file:///c:/Users/Admin/Downloads/reio-main/backend/models/NutritionLog.js).
+    *   **Frontend**: Delete [pages/NutritionPage.jsx](file:///c:/Users/Admin/Downloads/reio-main/frontend/src/pages/NutritionPage.jsx).
+    *   **Routing/Nav**: Remove all nutrition links from [App.jsx](file:///c:/Users/Admin/Downloads/reio-main/frontend/src/App.jsx) and [components/Navbar.jsx](file:///c:/Users/Admin/Downloads/reio-main/frontend/src/components/Navbar.jsx).
+*   **Daily Motivation / Quotes**:
+    *   **Backend**: Delete [controllers/motivationController.js](file:///c:/Users/Admin/Downloads/reio-main/backend/controllers/motivationController.js), [routes/motivation.js](file:///c:/Users/Admin/Downloads/reio-main/backend/routes/motivation.js).
+    *   **Frontend**: Remove any motivation widgets from [DashboardPage.jsx](file:///c:/Users/Admin/Downloads/reio-main/frontend/src/pages/DashboardPage.jsx).
+
+## 2. Features to Repurpose & Rename
+Terms like "Workout" and general fitness tracking should be replaced with "Assessment", "Drills", and "Talent Metrics".
+*   **Workouts -> Assessments**:
+    *   **Frontend**: Rename [WorkoutPage.jsx](file:///c:/Users/Admin/Downloads/reio-main/frontend/src/pages/WorkoutPage.jsx) to `AssessmentPage.jsx`. Update the route in [App.jsx](file:///c:/Users/Admin/Downloads/reio-main/frontend/src/App.jsx) to `/assessment`.
+    *   **Frontend UI**: Update [ExerciseDemo.jsx](file:///c:/Users/Admin/Downloads/reio-main/frontend/src/components/ExerciseDemo.jsx) to focus on standard sports talent combines/drills (e.g., Vertical Jump, 40-yard dash, Agility Cone Drills) rather than general gym exercises like squats or bench presses.
+*   **Session Management**:
+    *   **Backend**: Update [models/Session.js](file:///c:/Users/Admin/Downloads/reio-main/backend/models/Session.js) and [controllers/sessionController.js](file:///c:/Users/Admin/Downloads/reio-main/backend/controllers/sessionController.js) to track "Assessment Sessions". The schema should capture drill types, AI-calculated scores (speed, explosive power, mechanics), and talent percentiles rather than calories burned or reps.
+*   **User Profiles & Onboarding**:
+    *   **Frontend**: Update [ProfileSetupPage.jsx](file:///c:/Users/Admin/Downloads/reio-main/frontend/src/pages/ProfileSetupPage.jsx) and [ProfilePage.jsx](file:///c:/Users/Admin/Downloads/reio-main/frontend/src/pages/ProfilePage.jsx) to collect athletic baseline data (e.g., Primary Sport, Position, Height, Weight, Wingspan) instead of general fitness goals (weight loss, muscle building).
+    *   **Backend**: Update [models/User.js](file:///c:/Users/Admin/Downloads/reio-main/backend/models/User.js) to reflect athlete profiles.
+*   **Dashboard**:
+    *   **Frontend**: Overhaul [DashboardPage.jsx](file:///c:/Users/Admin/Downloads/reio-main/frontend/src/pages/DashboardPage.jsx) to display a "Talent Profile", showcasing the user's aggregate assessment scores, historical progress in specific athletic metrics, and AI recommendations for sport-specific improvements, replacing any charts related to generic fitness routines.
+
+## 3. Configuration & Metadata
+*   **Package.json**: Change the project name from `"name": "adaptive-fitness-companion"` to something like `"name": "sports-talent-assessment-app"`.
+*   **AI Analysis Endpoint ([backend/routes/analyze.js](file:///c:/Users/Admin/Downloads/reio-main/backend/routes/analyze.js))**: Ensure the prompt and logic passed to the AI specifically contextualizes the user's data to generate a "Sports Talent Report" (evaluating biomechanics, explosiveness, form) rather than general workout feedback.
