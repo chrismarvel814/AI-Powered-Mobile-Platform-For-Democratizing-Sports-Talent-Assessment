@@ -16,10 +16,11 @@ let dbError = null;
 
 // ✅ SIMPLE + WORKING CORS (no errors, works with Vercel)
 app.use(cors({
-    origin: true, // allow all origins (safe enough for now)
-    credentials: true
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
 }));
-
+app.options('*', cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
