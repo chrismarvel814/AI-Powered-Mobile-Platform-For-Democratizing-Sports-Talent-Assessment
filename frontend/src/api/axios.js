@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // 🔥 FORCE correct backend URL (no env dependency)
-const API_BASE_URL = "https://reio-backend.onrender.com/api";
+const API_BASE_URL = "https://ai-powered-mobile-platform-for.onrender.com/api";
 
 const api = axios.create({
     baseURL: API_BASE_URL,
