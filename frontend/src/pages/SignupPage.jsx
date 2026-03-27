@@ -23,6 +23,7 @@ export default function SignupPage() {
                 email: form.email,
                 password: form.password,
             });
+
             localStorage.setItem('token', data.data.token);
             localStorage.setItem('user', JSON.stringify(data.data.user));
             navigate('/profile-setup');
